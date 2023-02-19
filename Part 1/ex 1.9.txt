@@ -1,0 +1,2 @@
+
+docker run -v "/usr/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service

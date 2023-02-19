@@ -1,0 +1,18 @@
+FROM openjdk:8
+
+EXPOSE 8080
+
+WORKDIR /usr/src
+
+COPY . .
+
+# Window related hack to avoid \r\n
+RUN apt-get update && apt-get install -y dos2unix && find . -type f -print0 | xargs -0 dos2unix 
+
+RUN ./mvnw package
+
+CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]
+
+## run with:
+docker build . -t java-container
+docker run -p 8080:8080 java container

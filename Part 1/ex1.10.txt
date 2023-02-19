@@ -1,0 +1,10 @@
+Message 
+
+{
+"message": "You connected to the following path: /",
+"path": "/"
+}
+
+command:
+
+docker run -p 4000:8080 simple-web-service
